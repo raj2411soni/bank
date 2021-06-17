@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load static %}
+        <title>Transfer</title>
+        <link rel="stylesheet" href="{% static 'homedecor.css' %}"
+    </head>
+    <body>
+        <nav>
+    
+            <center>
+                <ul >
+                    <li><a href='{% url "home" %}'>Home</a></li>
+                    <li><a href="{% url 'cus' %}">customers</a></li>
+                    <li><a href="{% url 'history' %}">History</a></li>
+                </ul>
+            </center>
+        </nav>
+        <center>
+            <h1>Transfer Money</h1>
+        </center>
+        {% if error %}
+            <script>
+                alert("insufficient balance");
+            </script>
+        {% endif %}
+      <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="transfer-box">
+            <div class="inner-box">
+                  <h2>Sender Detail:-</h2>
+                  <center>
+                      
+                      <label><b>Sender Name</b></label>
+                      <br>
+                      <input type="text"  value="{{t.name}}" disabled name="sName" >
+                      <br><br>
+  
+                      <label><b>Sender Email ID</b></label>
+                      <br>
+                      <input type="text" disabled value="{{t.emailid}}" name="sender Email ID">
+                      <br><br>
+  
+                      <label><b>Sender Balance</b></label>
+                      <br>
+                      <input type="text"  value="{{t.balance}}" disabled name="sender Balance">
+                      <br><br>
+                  </center>
+            </div>
+            <div class="inner-box">
+              <h2>Receiver Detail:-</h2>
+                  <center>
+                      <br>
+                      
+                     <label><b>Receiver Name</b></label>
+                      <br>
+                      <select name="rname" >
+                          {% for i in r %}
+                                  <option value="{{i.id}}">{{i.name}}</option>
+                          {% endfor %}
+                      </select>
+                      <br><br>
+                      <br>
+                      
+                      <label><b>Transfer Balance</b></label>
+                      <br>
+                      <input type="text" name="Balance">
+                      <br><br><br>
+                     
+                        
+                     
+                      <button class="trb" type="submit"> Transfer </button>
+
+                  </center>
+            </div>
+        </div>
+      </form>
+    </body>
+</html> 

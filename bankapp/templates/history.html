@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load static %}
+        <title>History</title>
+        <link rel="stylesheet" href="{% static  'homedecor.css' %}"
+    </head>
+    <body>
+        <nav>
+    
+            <center>
+                <ul >
+                    <li><a href='{% url "home" %}'>Home</a></li>
+                    <li><a href="{% url 'cus' %}">customers</a></li>
+                    <li><a href="{% url 'history' %}">History</a></li>
+                </ul>
+            </center>
+        </nav>
+        <center>
+            <h1 >
+                History Of Transactions
+            </h1>
+            <table border="1">
+                <tr style="background-color:rgba(148, 41, 41, 0.527); padding:10px;">
+                    <th style="padding: 20px;">id</th>
+                    <th style="padding: 20px;">sender name</th>
+                    <th style="padding: 20px;">receiver name</th>
+                    <th style="padding: 20px;">Transfer</th>
+                    <th style="padding: 20px;">Date</th>
+                    <th style="padding: 20px;">Time</th>
+                </tr> 
+                
+                    {% for i in a %}
+                        <tr >
+                            <td style="padding: 10px;">{{i.id}}</td>
+                            <td style="padding: 10px;">{{i.sender}}</td>
+                            <td style="padding: 10px;">{{i.receiver}}</td>
+                            <td style="padding: 10px;">{{i.transfer}}</td>
+                            <td style="padding: 20px;">{{i.date.date}}</td>
+                            <td style="padding: 20px;">{{i.date.time}}</td>
+                        </tr>
+                    {% endfor %}
+                
+            </table>
+        </center>
+    </body>
+</html>

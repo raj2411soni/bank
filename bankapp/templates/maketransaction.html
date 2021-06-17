@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load static %}
+        <title>Make Transaction</title>
+        <link rel="stylesheet" href="{% static 'homedecor.css' %}">
+    </head>
+    <body>
+        <nav>
+    
+            <center>
+                <ul >
+                    <li><a href='{% url "home" %}'>Home</a></li>
+                    <li><a href="{% url 'cus' %}">customers</a></li>
+                    <li><a href="{% url 'history' %}">History</a></li>
+                </ul>
+            </center>
+        </nav>
+        <center>
+            <h1 > Make Transaction </h1>
+            <table border="1">
+                <tr style="background-color:rgba(148, 41, 41, 0.527);">
+                    <th style=" padding:10px;"> &nbsp; &nbsp; Customer ID &nbsp; &nbsp;</th>
+                    <th> &nbsp; &nbsp; Customer Name &nbsp; &nbsp;</th>
+                    <th> &nbsp; &nbsp; Email ID &nbsp; &nbsp;</th>
+                    <th> &nbsp; &nbsp; Balance &nbsp; &nbsp;</th>
+                    <th>&nbsp;&nbsp; Money Transfer  &nbsp;&nbsp;</th>
+                    
+                </tr>
+                {% for i in ones %}
+                    <tr >
+                        <td style=" padding:10px;"> &nbsp; &nbsp; {{i.id}} &nbsp; &nbsp;</td>
+                        <td> &nbsp; &nbsp; {{i.name}}   &nbsp; &nbsp;</td>
+                        <td>  &nbsp; &nbsp; {{i.emailid}}  &nbsp; &nbsp; </td>
+                        <td>  &nbsp; &nbsp; {{i.balance}}  &nbsp; &nbsp; </td>
+                        <td>&nbsp;&nbsp; <a href="{% url 'transfer' i.id %}"><center> <button style="border-radius: 20px; background-color: cornflowerblue; cursor: pointer;">Transfer</button></center></a> &nbsp;&nbsp;</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </center>
+    </body>
+</html>

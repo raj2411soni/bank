@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+    {% load static %}
+    <title>Banking System</title>
+    <link rel="stylesheet" href="{% static  'homedecor.css' %}">
+</head>
+<body>
+<nav>
+    
+    <center>
+        <ul >
+            <li><a href='{% url "home" %}'>Home</a></li>
+            <li><a href="{% url 'cus' %}">customers</a></li>
+            <li><a href="{% url 'history' %}">History</a></li>
+        </ul>
+    </center>
+</nav>
+<section>
+    <center><h1>Welcome To Foundation Bank</h1></center>
+</section>
+
+    <div>
+        <center>
+             <img class="abc" src="{% static 'BANK IMAGE.jpg' %}">
+        </center>
+    </div>
+    <div class="box">
+        <div class="con">
+            <center>
+                <img class="imgt" src="{% static 'online.jpg' %}">
+            
+                <a href="{% url 'make' %}"><button class="btn">Make Transaction</button></a>
+            </center>
+        </div>
+    
+        <div class="con">
+            <center>
+                <img class="imgt" src="{% static 'history.png' %}">
+                <a href="{% url 'history' %}"><button class="btn">Transaction History</button></a>
+            </center>
+        </div>
+    </div>
+
+</body>
+</html>

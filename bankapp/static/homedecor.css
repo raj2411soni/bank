@@ -1,0 +1,107 @@
+nav ul{
+    background-color:rgba(56, 0, 161, 0.692);
+    margin: 0px;
+    padding:10px;
+    
+    border-radius: 10px;
+    }
+    
+li{
+    list-style:none;
+}
+    
+html body{
+    margin:0px;
+}
+    
+nav li{
+    display: inline;
+    padding:20px;     
+}
+
+a{
+   color:white;
+   text-decoration: none;
+   font-weight:bold;
+}
+    
+nav{
+    text-align:center;
+    font-weight:bold;
+    font-size:18px;
+    border: 10px;
+}  
+        
+nav li:hover{
+    background-color:rgba(255,255,255,0.2);
+}
+
+.abc{
+    width:50%;
+    height:40%;
+    border-radius: 40px;
+}
+
+.btn{
+    color:white;
+    background-color:rgba(27, 13, 231, 0.521);
+    cursor: pointer;
+    border-radius:20px;
+    padding:10px;
+    font-weight: bold;
+    flex-grow: 1;
+    margin-top: 10px;
+    
+}
+
+
+
+.imgt{
+    margin-top: 10px;
+    height: 130px;
+    border: 50px;
+    border-radius: 100px;
+    align-items: center;
+    
+}
+
+
+.box{
+    margin: 50px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.con{
+    height: 200px;
+    width: 200px;
+    background-color:rgba(45, 29, 48, 0.678);
+    border-radius: 20px;
+}
+
+
+.transfer-box{
+    display:flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 50px;
+}
+
+.inner-box{
+    padding: 20px;
+    margin: 50px;
+    height: 20em;
+    width:  20em;
+    background-color:rgba(129, 58, 58, 0.541);
+    border-radius :20px;
+}
+
+.trb{
+    color:white;
+    background-color:rgba(6, 48, 139, 0.74);
+    cursor: pointer;
+    border-radius:10px;
+    padding:10px;
+    font-weight: bold;
+}
